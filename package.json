@@ -1,0 +1,15 @@
+{
+  "name": "covid19-api",
+  "version": "1.0.0",
+  "description": "Fetches covid 19 numbers for Kenya from WHO website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Uzziel Kibet",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
+  }
+}
