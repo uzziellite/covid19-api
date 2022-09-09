@@ -1,7 +1,7 @@
 const express = require('express')
 const axios = require('axios')
 const app = express()
-const port = 3005
+const port = 3000
 
 app.get('/covid', (req, res) => {
   //Get the Kenyan data from WHO
