@@ -1,13 +1,20 @@
 const app = require('express')()
 const axios = require('axios')
-//const app = express()
-//const port = 3000
+const cors = require('cors')
+
+//Allow requests from any origin
+app.use(cors())
+
+app.get('/', (req,res) => {
+  res.setHeader('Content-Type', 'text/html')
+  res.end(`API only fetches Covid 19 data for Kenya.`)
+})
 
 app.get('/api', (req, res) => {
-  const path = `/api/covid`;
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Cache-Control', 's-max-age=3600, stale-while-revalidate');
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+  const path = `/api/covid`
+  res.setHeader('Content-Type', 'text/html')
+  res.setHeader('Cache-Control', 's-max-age=3600, stale-while-revalidate')
+  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`)
 })
 
 app.get('/api/covid', (req, res) => {
@@ -27,8 +34,4 @@ app.get('/api/covid', (req, res) => {
 
 })
 
-module.exports = app;
-
-/*app.listen(port, () => {
-  console.log(`Started covid 19 data fetcher on port: ${port}`)
-})*/
+module.exports = app
